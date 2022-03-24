@@ -172,6 +172,9 @@ li {
     background-color: var(--secound-color);
     opacity: 0.4;
 }
+.landing .container {
+    height: 100%;
+}
 .landing .text-center {
     position: relative;
     z-index: 1;
@@ -185,13 +188,22 @@ li {
 .landing .text-center p {
     color: white;
 }
+@media (max-width: 767px) {
+    .landing .text-center p {
+        width: 100%;
+    }
+}
 /* End landing */
 /* Start About  */
-.about {
-    overflow: hidden;
-}
+
 .about .container .img {
     flex: 40%;
+}
+
+@media (max-width: 767px) {
+    .about .container .img img {
+        max-width: 100%;
+    }
 }
 .about .container .img img {
     border-radius: 4px;
@@ -201,24 +213,21 @@ li {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 }
-@media (max-width: 540px) {
-    .about img {
-        max-width: 78%;
-    }
-}
 .about .container .info {
     flex: 40%;
+}
+@media (max-width: 767px) {
+    .about .info p {
+
+        max-width: 100%;
+    }
 }
 .about .container h1 {
     font-size: 50px;
     width: 500px;
     padding: 10px 0;
 }
-@media (max-width: 540px) {
-    .about p {
-        width: 78%;
-    }
-}
+
 @media (max-width: 767px) {
     .about .container h1 {
         max-width: 100%;
@@ -279,9 +288,6 @@ li {
 }
 /* End About  */
 /* Start Services  */
-.services {
-    overflow: hidden;
-}
 .services .main-header h2 {
     width: fit-content;
     margin: 20px auto;
@@ -609,3 +615,22 @@ li {
     color: var(--main-color);
 }
 /* End Footer  */
+
+span.to-top {
+    position: fixed;
+    bottom: 150px;
+    right: 40px;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.to-top.active {
+    bottom: 60px;
+    opacity: 1;
+}

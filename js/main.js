@@ -154,7 +154,19 @@ let TopBar = document.querySelector(".topbar")
 
 let Header = document.querySelector(".header")
 
+let buttonToTop = document.querySelector(".to-top")
+
+buttonToTop.addEventListener("click" ,  function () {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+
 window.onscroll = function () {
+
+    console.log(`${window.scrollY}`)
 
     // Fixed Header 
 
@@ -164,16 +176,21 @@ window.onscroll = function () {
 
         TopBar.classList.add("active")
 
+        buttonToTop.classList.add("active")
+
     } else {
 
         Header.classList.remove("active")
 
         TopBar.classList.remove("active")
+
+        buttonToTop.classList.remove("active")
+
     }
 
     // Counte Section 
 
-    if (window.scrollY = CounterOffsetTop) {
+    if (window.scrollY <= CounterOffsetTop) {
 
         if (!started) {
 
